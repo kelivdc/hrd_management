@@ -1,7 +1,6 @@
 "use client";
 
-import { AppBar, Box, Paper } from "@material-ui/core";
-import { Button, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Paper, Button, Toolbar, Typography } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { blue } from "@mui/material/colors";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
