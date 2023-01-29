@@ -30,9 +30,9 @@ function Login() {
       <Box
         sx={{
           backgroundColor: "#fff",
-          width: "40%",
+          width: { xs: "90%", sm: "40%" },
           padding: "20px",
-          marginTop: "-150px",
+          marginTop: { sm: "-150px" },
           borderRadius: "10px",
         }}
       >
@@ -49,15 +49,17 @@ function Login() {
         <Stack spacing={2} mt={4}>
           <TextField label="Email" fullWidth />
           <TextField label="Password" fullWidth />
-          <Button
-            variant="contained"
-            fullWidth
-            sx={{
-              fontWeight: "bold",
-            }}
-          >
-            Login
-          </Button>
+          <Link href="/dashboard">
+            <Button
+              variant="contained"
+              fullWidth
+              sx={{
+                fontWeight: "bold",
+              }}
+            >
+              Login
+            </Button>
+          </Link>
           <Link href="/lupa-password">Lupa Password ?</Link>
         </Stack>
       </Box>
