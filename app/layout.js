@@ -1,14 +1,38 @@
-import './globals.css'
+"use client";
+
+import { Inter } from "@next/font/google";
+const inter = Inter({ subsets: ["latin"] });
+import "@fontsource/inter/400.css";
+import "../app/globals.css";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { CssBaseline, Paper } from "@mui/material";
 
 export default function RootLayout({ children }) {
+  const theme = createTheme({
+    typography: {
+      fontFamily: "Inter",
+      button: {
+        textTransform: "none",
+      },
+    },
+    button: {
+      textTransform: "none",
+    },   
+    components: {
+      MuiTextField: {
+        defaultProps: {
+          size: "small"
+        },        
+      }
+    },
+  });
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-      <body>{children}</body>
-    </html>
-  )
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <html lang="en">
+        <head />
+        <body theme={inter.className}>{children}</body>
+      </html>
+    </ThemeProvider>
+  );
 }
