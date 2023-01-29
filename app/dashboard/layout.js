@@ -16,11 +16,14 @@ import React from "react";
 import Link from "next/link";
 import Sidebar from "./sidebar";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import {
+  ProSidebarProvider, useProSidebar,
+} from "react-pro-sidebar";
 
 // https://berrydashboard.io/dashboard/default
 const color = blue[600];
 
-function Layout({ children }) {
+function Layout({ children }) {  
   const theme2 = createTheme({
     typography: {
       allVariants: {
@@ -42,6 +45,7 @@ function Layout({ children }) {
   return (
     <>
       <ThemeProvider theme={theme2}>
+        <ProSidebarProvider>
         <Box
           component="main"
           sx={{
@@ -67,11 +71,14 @@ function Layout({ children }) {
                   padding: "20px 30px",
                 }}
               >
+                
                 {children}
               </Box>
             </Grid>
           </Grid>
         </Box>
+        </ProSidebarProvider>
+
       </ThemeProvider>
     </>
   );

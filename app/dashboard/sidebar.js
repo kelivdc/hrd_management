@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import React from "react";
 import {
   Menu,
@@ -6,17 +6,20 @@ import {
   ProSidebarProvider,
   Sidebar,
   SubMenu,
+  useProSidebar,
 } from "react-pro-sidebar";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import PeopleIcon from '@mui/icons-material/People';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import { blue } from "@mui/material/colors";
 import Link from "next/link";
 
 const color = blue[600];
 
-function SideBar() {
+function SideBar() {  
+  const { collapseSidebar } = useProSidebar();  
   return (
     <>
-      <ProSidebarProvider>
         <div style={{ display: "flex", height: "100vh" }}>
           <Sidebar
             backgroundColor="white"
@@ -39,14 +42,14 @@ function SideBar() {
             >
               <PeopleAltIcon sx={{ fontSize: 20 }} /> AIEAO
               <Typography color={blue[200]}>PT Harapan Jaya</Typography>
-            </Typography>
+            </Typography>           
             <Menu>
-              <MenuItem>
-                <Link href="/dashboard">Dashboard</Link>
+              <MenuItem icon={<DashboardIcon />} component={<Link href="/dashboard" />}>
+                Dashboard
               </MenuItem>
-              <SubMenu label="Karyawan">
-                <MenuItem>
-                  <Link href="/dashboard/karyawan/list">List</Link>
+              <SubMenu label="Karyawan" icon={<PeopleIcon />}>
+                <MenuItem component={<Link href="/dashboard/karyawan/list" />}>
+                  List
                 </MenuItem>
                 <MenuItem> Departemen </MenuItem>
               </SubMenu>
@@ -55,7 +58,6 @@ function SideBar() {
             </Menu>
           </Sidebar>
         </div>
-      </ProSidebarProvider>
     </>
   );
 }
