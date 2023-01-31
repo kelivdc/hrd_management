@@ -13,20 +13,24 @@ import PeopleIcon from '@mui/icons-material/People';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import { blue } from "@mui/material/colors";
 import Link from "next/link";
+import { Box } from "@mui/system";
 
-const color = blue[600];
+// const color = blue[600];
+const color = "#607489"
 
 function SideBar() {  
   const { collapseSidebar } = useProSidebar();  
   return (
     <>
-        <div style={{ display: "flex", height: "100vh" }}>
+        <Box sx={{ display: "flex", top: 0, bottom: 0, position: "fixed", overflowY: "hidden" }}>
           <Sidebar
-            backgroundColor="white"
             rootStyles={{
-              color: "#555",
-              fontSize: "13px",
+              color: "#607489",
+              fontSize: "13px"
             }}
+            backgroundColor="white"
+            width="228px"
+            overflowY="hidden"
           >
             <Typography
               variant="h5"
@@ -53,11 +57,11 @@ function SideBar() {
                 </MenuItem>
                 <MenuItem> Departemen </MenuItem>
               </SubMenu>
-              <MenuItem> Payroll </MenuItem>
-              <MenuItem> Settings </MenuItem>
+              {/* <MenuItem> Payroll </MenuItem>
+              <MenuItem> Settings </MenuItem>               */}
             </Menu>
           </Sidebar>
-        </div>
+        </Box>
     </>
   );
 }
