@@ -59,6 +59,7 @@ function Dashboard() {
         ex eiusmod cillum fugiat. Tempor culpa aliqua velit qui quis Lorem
         officia incididunt exercitation est. Pariatur occaecat est fugiat duis
         dolor velit exercitation ea irure aute voluptate amet minim.
+        Update
       </p>
     </>
   );
