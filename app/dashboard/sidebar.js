@@ -15,8 +15,7 @@ import { blue } from "@mui/material/colors";
 import Link from "next/link";
 import { Box } from "@mui/system";
 
-// const color = blue[600];
-const color = "#607489"
+const color = blue[600];
 
 function SideBar() {  
   const { collapseSidebar } = useProSidebar();  
@@ -33,7 +32,7 @@ function SideBar() {
             overflowY="hidden"
           >
             <Typography
-              variant="h5"
+              variant="h6"
               component="div"
               sx={{
                 flexGrow: 1,
@@ -44,7 +43,7 @@ function SideBar() {
                 padding: "20px",
               }}
             >
-              <PeopleAltIcon sx={{ fontSize: 20 }} /> AIEAO
+              <PeopleAltIcon sx={{ fontSize: 20 }}/> PRO STAFF
               <Typography color={blue[200]}>PT Harapan Jaya</Typography>
             </Typography>           
             <Menu>
